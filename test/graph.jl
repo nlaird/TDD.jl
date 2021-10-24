@@ -32,7 +32,7 @@ using TDD
         @test TDD.reachable(graph, 1) == [1,2,3]
         @test TDD.reachable(graph, 6) == [6]
         @test TDD.conn_comp(graph) == [[1,2,3],[4,5],[6]]#2 connected sections
-        
+
         graph = [[1,2,3], 
                 [2,1,4],
                 [3,1],
@@ -60,4 +60,16 @@ using TDD
         @test TDD.direct_neighbors(graph, 1) == [1,2,3]
         @test TDD.reachable(graph, 1) == [1,2,3]
         @test TDD.conn_comp(graph) == [[1,2,3],[4,5]]#2 connected sections 
+
+        graph = Bool[ 
+                0 1 1 0 0 0
+                1 0 0 0 0 0
+                1 0 0 0 0 0
+                0 0 0 0 1 0
+                0 0 0 1 0 0
+                0 0 0 0 0 0]
+        @test TDD.direct_neighbors(graph, 6) == [6]
+        @test TDD.reachable(graph, 1) == [1,2,3]
+        @test TDD.reachable(graph, 6) == [6]
+        @test TDD.conn_comp(graph) == [[1,2,3],[4,5],[6]]#2 connected sections
 end

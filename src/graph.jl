@@ -6,6 +6,15 @@ function direct_neighbors(graph, node)
     return neighbors
 end
 
+function direct_neighbors(graph::Matrix{Bool}, node)
+    nodes = collect(1:size(graph)[1])
+    neighbors = nodes[graph[node,:]]
+    if node ∉ neighbors
+        pushfirst!(neighbors, node)
+    end
+    return neighbors 
+end
+
 function reachable(graph, node)
     return dfs([], graph, node)
 end
