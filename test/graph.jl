@@ -18,4 +18,12 @@ using TDD
             [4]]
     @test direct_neighbors(graph, 1) == [1,2,3]
 
+    graph = [[2,3], 
+            [1],
+            [1],
+            [5],
+            [4],
+            []]
+    @test direct_neighbors(graph, 6) == [6]
+
 end
