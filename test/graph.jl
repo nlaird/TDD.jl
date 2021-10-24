@@ -35,7 +35,7 @@ using TDD
         @test TDD.reachable(graph, 3) == [3,1,2,4,5]
 
         #start #3 of homework
-        @test TDD.conn_comp(graph) == [[1,2,3,4,5]]#everything is connected
+        @test TDD.conn_comp(graph) == [[1,2,4,5,3]]#everything is connected
 
         graph = [[1,2,3], 
                 [2,1],
