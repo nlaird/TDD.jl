@@ -5,3 +5,7 @@ function direct_neighbors(graph, node)
     end
     return neighbors
 end
+
+function reachable(graph, node)
+    
+end
