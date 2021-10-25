@@ -6,4 +6,6 @@ using TDD
     @test minimum(iv) == 1
     @test maximum(iv) == 32
     @test (4 in iv) == true
+
+    @test isempty(TDD.Interval()) == true
 end
