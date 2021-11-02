@@ -16,7 +16,11 @@ using TDD
     @test intersect([1,2,3], iv) == [1,2,3]
     @test intersect([40], iv) == []
     @test intersect([], iv) == []
-    @test show(iv) == "\u301a1:32\u301b"
+
+    io = IOBuffer()
+    show(io, iv)
+    str = String(take!(io))
+    @test str == "\u301a1:32\u301b"
     
 
     iv = TDD.Interval()
@@ -28,6 +32,10 @@ using TDD
     @test issubset(1:32, iv) == false
     @test intersect([1,2,3], iv) == []
     @test intersect([], iv) == []
-    @test show(iv) == "∅"
+
+    io = IOBuffer()
+    show(io, iv)
+    str = String(take!(io))
+    @test str == "∅"
 
 end
