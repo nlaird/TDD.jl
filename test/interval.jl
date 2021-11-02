@@ -11,6 +11,8 @@ using TDD
     @test isempty(iv) == false
     @test issubset([1,2,3], iv) == true
     @test issubset([1,2,3,40], iv) == false
+    @test issubset([], iv) == true
+    @test issubset(1:32, iv) == true
 
     iv = TDD.Interval()
     @test isempty(iv) == true
