@@ -13,11 +13,14 @@ using TDD
     @test issubset([1,2,3,40], iv) == false
     @test issubset([], iv) == true
     @test issubset(1:32, iv) == true
+    
 
     iv = TDD.Interval()
     @test isempty(iv) == true
     @test minimum(iv) === nothing
     @test maximum(iv) === nothing
     @test (4 in iv) == false
+    @test issubset([], iv) == true
+    @test issubset(1:32, iv) == false
 
 end
