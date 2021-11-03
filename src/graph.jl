@@ -32,7 +32,6 @@ end
 function conn_comp(graph)
     comps = Array{Int}[]
     for node in collect(1:size(graph)[1])
-        println(stdout, node, comps)
         if length(comps)<1
             push!(comps, reachable(graph, node))
         elseif  sum(map(x->node in x, comps)) < 1  #if node has not be found/added to a connection yet
